@@ -15,6 +15,10 @@
     </div>
   </header>
 
+  <div id="carousel">
+    <img id="carousel-img" src="./images/pilt1.jpg" alt="Karussellipilt">
+  </div>
+
   <main class="container">
     <section class="contact">
       <h2>Kontakt</h2>
@@ -54,5 +58,21 @@
   <footer>
     <p>&copy; 2025 Härra Uba. Kõik konservid avatud.</p>
   </footer>
+
+  <script>
+    const images = [
+      './images/pilt1.jpg',
+      './images/pilt2.jpg',
+      './images/pilt3.jpg'
+    ];
+    let currentIndex = 0;
+    const imgElement = document.getElementById('carousel-img');
+
+    imgElement.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.src = images[currentIndex];
+    });
+  </script>
 </body>
 </html>
+
